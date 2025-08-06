@@ -3,11 +3,11 @@ runtime: python311
 build:
   commands:
     build:
-      - python3 -m pip install --user -r requirements.txt
-      - export PATH=$PATH:/root/.local/bin
+      - python3 -m venv /opt/venv
+      - /opt/venv/bin/pip install -r requirements.txt
 run:
   runtime-version: 3.11
-  command: /root/.local/bin/streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+  command: source /opt/venv/bin/activate && streamlit run app.py --server.port=8501 --server.address=0.0.0.0
   network:
     port: 8501
   env:
