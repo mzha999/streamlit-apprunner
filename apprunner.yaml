@@ -7,7 +7,7 @@ build:
       - python3 -m pip install --target /app/packages -r requirements.txt
 run:
   runtime-version: 3.11
-  command: python3 -m streamlit run app.py --server.port=8501 --server.address=0.0.0.0
+  command: python3 -m streamlit run app.py --server.port=8501 --server.address=0.0.0.0 --global.developmentMode=false
   network:
     port: 8501
   env:
