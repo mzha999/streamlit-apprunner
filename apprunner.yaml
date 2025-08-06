@@ -10,4 +10,5 @@ run:
   network:
     port: 8501
   env:
-    PORT: 8501
+    - name: PORT
+      value: "8501"
